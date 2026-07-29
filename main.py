@@ -5,7 +5,7 @@ import json
 import os
 
 
-
+# قراءة البيانات
 try:
     with open("data.json", "r") as f:
         welcome_channels = json.load(f)
@@ -18,7 +18,7 @@ def save_data():
         json.dump(welcome_channels, f, indent=4)
 
 
-
+# إعداد البوت
 
 intents = discord.Intents.default()
 intents.members = True
@@ -31,7 +31,7 @@ bot = commands.Bot(
 )
 
 
-
+# تشغيل البوت
 
 @bot.event
 async def on_ready():
@@ -43,8 +43,7 @@ async def on_ready():
     )
 
 
-
-
+# أمر التفعيل
 
 @bot.tree.command(
     name="up",
@@ -73,8 +72,7 @@ async def up(interaction: discord.Interaction):
 
 
 
-
-
+# رسالة دخول العضو
 
 @bot.event
 async def on_member_join(member):
@@ -142,7 +140,7 @@ async def on_member_join(member):
 
     embed.set_footer(
         text=
-        "Welcome System • Powered by ziko"
+        "Welcome System • Powered by Bot"
     )
 
 
@@ -152,10 +150,10 @@ async def on_member_join(member):
 
 
 
-
+# تشغيل
 
 TOKEN = os.getenv(
-    "MTUzMjA1NTI2NzU0ODg1NjQzMg.GIEFKd.93B7slvPb66FT2Asn346aHANdU1bHq25rIZZ6c"
+    "TOKEN"
 )
 
 
